@@ -1,10 +1,13 @@
 package com.hillel;
 
+import java.util.Random;
+
 public class Main {
+    public static int[] randomArr = new int[10];
+    public static int average = 0;
+    public static String lineNumber = "";
 
     public static void main(String[] args) {
-        int[] random_arr = new int[10];
-        float avarage = 0;
 
 
         // Вывести ряд чисел от 1 до 100 через пробел, с изменениями
@@ -15,63 +18,69 @@ public class Main {
         //- если число кратно и 3 и 5 то вместо него вывести HelloWorld
 
 
-	for(int i=1; i <= 100; i++) {
-        if (i % 3 == 0 && i % 5 != 0) {
-            System.out.print("Hello ");
-        } else if (i % 3 != 0 && i % 5 == 0) {
-            System.out.print("World ");
-        } else if (i % 3 == 0 && i % 5 == 0) {
-            System.out.print("HelloWorld ");
-        } else {
-            System.out.print(i + " ");
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 != 0) {
+                System.out.print("Hello ");
+            } else if (i % 3 != 0 && i % 5 == 0) {
+                System.out.print("World ");
+            } else if (i % 3 == 0 && i % 5 == 0) {
+                System.out.print("HelloWorld ");
+            } else {
+                System.out.print(i + " ");
+            }
         }
-    }
 
-    System.out.println();
-
-    // Заполнить массив из 10 элементов случайными целыми числами от 10(включительно) до 20(включительно). Вывести среднее арифметическое.
-
-    for (int i = 0; i < 10; i++) {
-        int rand_num = (int)((Math.random() * (20 - 10 + 1)) + 10);
-        random_arr[i] = rand_num;
-        avarage += rand_num;
-    }
-    System.out.println(avarage / 10);
-
+        System.out.println();
 
     }
 
     // Написать метод который вернет String в которой будут в одну строку числа от 1 до 30. Каждое число при этом взять в круглые скобки ()
 
-    public static String line_number() {
-        String a = "";
-        for (int i = 1; i <= 30; i++) {
-            a += "(" + i + ")";
+    public static String lineNumber() {
+        String res = "";
+        StringBuilder stringLine = new StringBuilder();
+        for (int i = 1; i < 31; i++) {
+            stringLine.append("(").append(i).append(")");
         }
-        return a;
+        return stringLine.toString();
 
+    }
+
+    // Заполнить массив из 10 элементов случайными целыми числами от 10(включительно) до 20(включительно). Вывести среднее арифметическое.
+    public static double randomizeArr() {
+        for (int i = 0; i < 10; i++) {
+            Random random = new Random();
+            int randNum = random.nextInt(10 + 1) + 10;
+            randomArr[i] = randNum;
+            average += randNum;
+        }
+        double result = average / 10.0;
+
+        System.out.println(result);
+
+        return result;
     }
 
     // Написать метод который убирает лишние пробелы в строке и возвращает строку.
 
-    public static String delete_space(String str) {
-        String new_str = "";
+    public static String deleteSpace(String str) {
+        String newStr = "";
 
-        char[] str_to_arr = str.trim().toCharArray();
-        for (int i = 0; i < str_to_arr.length; i++) {
+        char[] toCharArray = str.trim().toCharArray();
+        for (int i = 0; i < toCharArray.length; i++) {
             char space = ' ';
-            if (str_to_arr[i] == space && str_to_arr[i + 1] == space) {
+            if (toCharArray[i] == space && toCharArray[i + 1] == space) {
                 continue;
 
             } else {
-                new_str += str_to_arr[i];
+                newStr += toCharArray[i];
             }
 
         }
 
-        System.out.println(new_str);
+        System.out.println(newStr);
 
-        return new_str;
+        return newStr;
     }
 
     // Задан 2-мерный массив char и слово. Написать метод который определит есть ли по вертикали или горизонтали это слово.
@@ -79,34 +88,34 @@ public class Main {
     // Массив загрузить из текстового файла
 
 
-    public static boolean check_arr(char[][] args, String str_test) {
+    public static boolean checkArr(char[][] args, String strTest) {
 
-        char[] ch=str_test.toCharArray();
-        int nums = args.length;
-        int col = args[0].length;
-        int k = 0;
-        for (int i = 0; i < nums; i++) {
-            for (int j = 0; j < col; j++) {
-                if (args[i][j] == ch[k]) {
-                    k++;
-                    if (k == ch.length) {
+        char[] stringToArray = strTest.toCharArray();
+        int countLine = args.length;
+        int countCol = args[0].length;
+        int counter = 0;
+        for (int i = 0; i < countLine; i++) {
+            for (int j = 0; j < countCol; j++) {
+                if (args[i][j] == stringToArray[counter]) {
+                    counter++;
+                    if (counter == stringToArray.length) {
                         return true;
                     }
                 } else {
-                    k = 0;
+                    counter = 0;
                 }
             }
         }
 
-        for (int i = 0; i < col; i++) {
-            for (int j = 0; j < nums; j++) {
-                if (args[j][i] == ch[k]) {
-                    k++;
-                    if (k == ch.length) {
+        for (int i = 0; i < countCol; i++) {
+            for (int j = 0; j < countLine; j++) {
+                if (args[j][i] == stringToArray[counter]) {
+                    counter++;
+                    if (counter == stringToArray.length) {
                         return true;
                     }
                 } else {
-                    k = 0;
+                    counter = 0;
                 }
             }
         }
