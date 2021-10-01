@@ -1,4 +1,9 @@
 package com.hillel;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Scanner;
 
 
 public class Main {
@@ -6,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         int[] random_arr = new int[10];
         float avarage = 0;
+
 
         // Вывести ряд чисел от 1 до 100 через пробел, с изменениями
         //- если число кратно 3 то вместо него вывести Hello
@@ -25,7 +31,7 @@ public class Main {
         } else {
             System.out.print(i + " ");
         }
-        }
+    }
 
     System.out.println();
 
@@ -35,13 +41,10 @@ public class Main {
         int rand_num = (int)((Math.random() * (20 - 10 + 1)) + 10);
         random_arr[i] = rand_num;
         avarage += rand_num;
-        System.out.print(random_arr[i] + " ");
     }
     System.out.println(avarage / 10);
 
-//        char Arr[][] = {{ 't', 'e', 's', 't',}, {'k', 'e', 's', 'e'}, {'e', 'm', 'k', 's'}, {'s','s', 's', 't'}, {'t', 'e', 's', 'k'}};
-//    boolean bool = check_arr(Arr, "test");
-//    System.out.print(bool);
+
     }
 
     // Написать метод который вернет String в которой будут в одну строку числа от 1 до 30. Каждое число при этом взять в круглые скобки ()
@@ -80,6 +83,7 @@ public class Main {
     // Задан 2-мерный массив char и слово. Написать метод который определит есть ли по вертикали или горизонтали это слово.
     // Например, в данном случае для слова test метод должен вернуть true:
     // Массив загрузить из текстового файла
+
 
     public static boolean check_arr(char[][] args, String str_test) {
 
