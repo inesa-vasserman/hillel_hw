@@ -4,7 +4,7 @@ package com.hillel;
 public class Main {
 
     public static void main(String[] args) {
-        int random_arr [] = new int[10];
+        int[] random_arr = new int[10];
         float avarage = 0;
 
         // Вывести ряд чисел от 1 до 100 через пробел, с изменениями
@@ -39,9 +39,9 @@ public class Main {
     }
     System.out.println(avarage / 10);
 
-        char Arr[][] = {{ 't', 'e', 's', 't',}, {'k', 'e', 's', 'e'}, {'e', 'm', 'k', 's'}, {'s','s', 's', 't'}, {'t', 'e', 's', 'k'}};
-    boolean bool = check_arr(Arr, "test");
-    System.out.print(bool);
+//        char Arr[][] = {{ 't', 'e', 's', 't',}, {'k', 'e', 's', 'e'}, {'e', 'm', 'k', 's'}, {'s','s', 's', 't'}, {'t', 'e', 's', 'k'}};
+//    boolean bool = check_arr(Arr, "test");
+//    System.out.print(bool);
     }
 
     // Написать метод который вернет String в которой будут в одну строку числа от 1 до 30. Каждое число при этом взять в круглые скобки ()
@@ -97,9 +97,9 @@ public class Main {
                 } else {
                     k = 0;
                 }
-
             }
         }
+
         for (int i = 0; i < col; i++) {
             for (int j = 0; j < nums; j++) {
                 if (args[j][i] == ch[k]) {
@@ -110,7 +110,6 @@ public class Main {
                 } else {
                     k = 0;
                 }
-
             }
         }
 
