@@ -6,6 +6,8 @@ public class Main {
     public static int[] randomArr = new int[10];
     public static int average = 0;
     public static String lineNumber = "";
+    public static String newString = "";
+    public static double result;
 
     public static void main(String[] args) {
 
@@ -30,11 +32,11 @@ public class Main {
             }
         }
 
-        System.out.println();
 
     }
 
     // Написать метод который вернет String в которой будут в одну строку числа от 1 до 30. Каждое число при этом взять в круглые скобки ()
+    // FIXED
 
     public static String lineNumber() {
         String res = "";
@@ -47,6 +49,8 @@ public class Main {
     }
 
     // Заполнить массив из 10 элементов случайными целыми числами от 10(включительно) до 20(включительно). Вывести среднее арифметическое.
+    // FIXED
+
     public static double randomizeArr() {
         for (int i = 0; i < 10; i++) {
             Random random = new Random();
@@ -54,9 +58,7 @@ public class Main {
             randomArr[i] = randNum;
             average += randNum;
         }
-        double result = average / 10.0;
-
-        System.out.println(result);
+        result = average / 10.0;
 
         return result;
     }
@@ -64,8 +66,6 @@ public class Main {
     // Написать метод который убирает лишние пробелы в строке и возвращает строку.
 
     public static String deleteSpace(String str) {
-        String newStr = "";
-
         char[] toCharArray = str.trim().toCharArray();
         for (int i = 0; i < toCharArray.length; i++) {
             char space = ' ';
@@ -73,14 +73,13 @@ public class Main {
                 continue;
 
             } else {
-                newStr += toCharArray[i];
+                newString += toCharArray[i];
             }
 
         }
 
-        System.out.println(newStr);
 
-        return newStr;
+        return newString;
     }
 
     // Задан 2-мерный массив char и слово. Написать метод который определит есть ли по вертикали или горизонтали это слово.
