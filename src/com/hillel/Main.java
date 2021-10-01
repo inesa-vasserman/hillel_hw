@@ -38,7 +38,7 @@ public class Main {
     // Написать метод который вернет String в которой будут в одну строку числа от 1 до 30. Каждое число при этом взять в круглые скобки ()
     // FIXED
 
-    public static String lineNumber() {
+    public static String makeLineNumber() {
         String res = "";
         StringBuilder stringLine = new StringBuilder();
         for (int i = 1; i < 31; i++) {
@@ -51,7 +51,7 @@ public class Main {
     // Заполнить массив из 10 элементов случайными целыми числами от 10(включительно) до 20(включительно). Вывести среднее арифметическое.
     // FIXED
 
-    public static double randomizeArr() {
+    public static double randomizeArray() {
         for (int i = 0; i < 10; i++) {
             Random random = new Random();
             int randNum = random.nextInt(10 + 1) + 10;
@@ -87,7 +87,7 @@ public class Main {
     // Массив загрузить из текстового файла
 
 
-    public static boolean checkArr(char[][] args, String strTest) {
+    public static boolean checkArray(char[][] args, String strTest) {
 
         char[] stringToArray = strTest.toCharArray();
         int countLine = args.length;
